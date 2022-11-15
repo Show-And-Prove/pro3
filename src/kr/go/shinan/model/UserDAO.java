@@ -15,7 +15,7 @@ public class UserDAO {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	String key = "%02x";
-	public int idCheckPro(String id){	//중복 아이디 체크 / 회원가입시 가입전 체크
+	public int idCheckPro(String id){	//아이디 중복체크
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
@@ -38,7 +38,6 @@ public class UserDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_JOIN);
 			//id, pw, name, birth, email, tel, address
 			pstmt.setString(1, user.getId());
@@ -70,7 +69,6 @@ public class UserDAO {
 		
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.VISIT_UPDATE);
 			pstmt.setString(1, id);
 			pstmt.executeUpdate();
@@ -109,7 +107,6 @@ public class UserDAO {
 		UserDTO dto = new UserDTO();
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -145,7 +142,6 @@ public class UserDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_UPDATE);
 			//id, pw, name, birth, email, tel, address
 			pstmt.setString(1, user.getPw());
