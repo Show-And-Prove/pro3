@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
-</footer>
+<section class="footer-2 section-padding gray-bg pb-6">
+		<div class="footer-btm mt-6 pt-6 border-top">
+			<div class="columns is-justify-content-center">
+				<div class="column is-6-desktop">
+					<div class="copyright has-text-centered ">
+						우편번호) 58827 전라남도 신안군 압해읍 천사로 1004 Tel 061-271-1004 Fax 061-240-8000 <br>Copyright (c) Shinan-gun. All Rights Reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+</section>

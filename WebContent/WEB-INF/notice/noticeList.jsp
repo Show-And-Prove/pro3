@@ -12,13 +12,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>공지사항 목록</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <jsp:include page="/head.jsp" />
   </head>
   <body>
   <jsp:include page="/header.jsp" />
   <section class="section">
     <div class="container">
       <h1 class="title">공지사항 목록</h1>
+      
 		<table class="table">
 		  <thead>
 		    <tr>
@@ -37,16 +38,18 @@
 		      	<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
 		    </tr>
 		    </c:forEach>
-<%-- 		    <c:if test="${list==null }">
+			<c:if test="${empty list }">
 		    <tr>
 		    	<td colspan="3">해당 데이터 목록이 없습니다.</td>
 		    </tr>
-		    </c:if> --%>
+		    </c:if>
 		  </tbody>
 		</table>
+		<c:if test='${sid.equals("admin") }'>
 		<div class="buttons">
 		  <a href="${path1 }/notice/addNotice.jsp" class="button is-success">글 등록</a>
 		</div>
+		</c:if>
     </div>
   </section>
   <jsp:include page="/footer.jsp"></jsp:include>
