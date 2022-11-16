@@ -32,6 +32,7 @@ public class MariaDBTest {
 			assertNotNull(conn);
 			log.info("conn : " + conn);
 			log.info("pstmt : " + pstmt);
+			System.out.println("정상 연결");
 			
 			rs.next();
 			log.info(rs.getString("time"));

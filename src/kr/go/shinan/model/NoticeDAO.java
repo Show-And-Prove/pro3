@@ -14,6 +14,7 @@ public class NoticeDAO {
 	private ResultSet rs = null;
 	String sql = "";
 	
+	//공지사항 목록
 	public ArrayList<NoticeDTO> getNoticeList() {
 		ArrayList<NoticeDTO> notiList = new ArrayList<NoticeDTO>();
 		try {
@@ -43,16 +44,15 @@ public class NoticeDAO {
 		return notiList;
 	}
 	
+	//글 조회수 증가
 	public NoticeDTO getNotice(int no){
 		NoticeDTO dto = new NoticeDTO();
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.NOTICE_VISITED_UPDATE);
 			pstmt.setInt(1, no);
 			pstmt.executeUpdate();
 			pstmt.close();
-			//해당 레코드를 검색
 			pstmt = con.prepareStatement(Maria.NOTICE_SELECT_ONE);
 			pstmt.setInt(1, no);		
 			rs = pstmt.executeQuery();
@@ -78,11 +78,11 @@ public class NoticeDAO {
 		return dto;
 	}
 	
+	//글 작성
 	public int addNotice(NoticeDTO dto){
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//글 추가
 			pstmt = con.prepareStatement(Maria.NOTICE_INSERT);
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
@@ -101,6 +101,7 @@ public class NoticeDAO {
 		return cnt;
 	}
 
+	//글 삭제
 	public int delNotice(int no) {
 		int cnt = 0;
 		try {
@@ -123,11 +124,11 @@ public class NoticeDAO {
 		return cnt;
 	}
 
+	//글 수정
 	public int modifyNotice(NoticeDTO dto) {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//글 추가
 			pstmt = con.prepareStatement(Maria.NOTICE_UPDATE);
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());

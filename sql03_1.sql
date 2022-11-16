@@ -1,3 +1,4 @@
-select * from test;
 
-insert into test values('abc', 100);
+
+
+select * from user where id="test";

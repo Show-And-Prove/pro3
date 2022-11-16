@@ -15,14 +15,19 @@ public class UserDAO {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	String key = "%02x";
-	public int idCheckPro(String id){	//아이디 중복체크
+	//아이디 중복체크
+	public int idCheckPro(String id){	
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
 			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			if(rs.next()){ cnt = cnt + 1;	} else { cnt = 0;	}
+			if(rs.next()){
+				cnt = cnt + 1;
+			} else { 
+				cnt = 0;	
+			}
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
 		} catch(Exception e){
@@ -39,7 +44,7 @@ public class UserDAO {
 		try {
 			con = Maria.getConnection();
 			pstmt = con.prepareStatement(Maria.USER_JOIN);
-			//id, pw, name, birth, email, tel, address
+			// ? id, pw, name, birth, email, tel, address
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPw());
 			pstmt.setString(3, user.getName());
@@ -79,7 +84,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				qpw = AES256.decryptAES256(rs.getString("pw"), key);
-				System.out.println("비밀번호 복호화 : "+qpw);
+				System.out.println("비밀번호 복호화 : "+qpw);	//콘솔창출력
 				if(pw.equals(qpw)){
 					cnt = 1;
 				} else {
