@@ -84,11 +84,11 @@
 			<div class="card">
 				<div class="card-image">
 					<figure class="image is-16by9 is-covered">
-						<img src="https://www.ito.or.kr/main/img/main/visual07.jpg" alt="비쥬얼1" />
+						<img src="<!-- https://www.ito.or.kr/main/img/main/visual07.jpg" --> alt="비쥬얼1" />
 					</figure>
 				</div>
 				<div class="card-content slider-text ">
-					<div class="is-size-5 box">시민의 행복을 추구하는 인천관광공사 INCHEON TOURISM ORGANIZATION</div>
+					<div class="is-size-5 box"></div>
 				</div>
 			</div>
 		</div>
