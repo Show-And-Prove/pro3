@@ -107,7 +107,7 @@
 			</div>
       	</div>
 		<div class="buttons">
-		  <a href="${path1 }/GetTourListCtrl.do" class="button is-info">전체 목록</a>
+		  <a href="${path1 }/GetTourListCtrl.do" class="button is-dark">전체 목록</a>
 		</div>
     </div>
   </section>

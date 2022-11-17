@@ -7,27 +7,21 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import kr.go.shinan.dto.UserDTO;
-
-import com.crypto.util.AES256;
+import kr.go.shinan.service.AES256;
 
 public class UserDAO {
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	String key = "%02x";
-	//아이디 중복체크
-	public int idCheckPro(String id){	
+	public int idCheckPro(String id){	//중복 아이디 체크 / 회원가입시 가입전 체크
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
 			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			if(rs.next()){
-				cnt = cnt + 1;
-			} else { 
-				cnt = 0;	
-			}
+			if(rs.next()){ cnt = cnt + 1;	} else { cnt = 0;	}
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
 		} catch(Exception e){
@@ -43,8 +37,9 @@ public class UserDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
+			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_JOIN);
-			// ? id, pw, name, birth, email, tel, address
+			//id, pw, name, birth, email, tel, address
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPw());
 			pstmt.setString(3, user.getName());
@@ -74,6 +69,7 @@ public class UserDAO {
 		
 		try {
 			con = Maria.getConnection();
+			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.VISIT_UPDATE);
 			pstmt.setString(1, id);
 			pstmt.executeUpdate();
@@ -84,7 +80,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				qpw = AES256.decryptAES256(rs.getString("pw"), key);
-				System.out.println("비밀번호 복호화 : "+qpw);	//콘솔창출력
+				System.out.println("비밀번호 복호화 : "+qpw);
 				if(pw.equals(qpw)){
 					cnt = 1;
 				} else {
@@ -112,6 +108,7 @@ public class UserDAO {
 		UserDTO dto = new UserDTO();
 		try {
 			con = Maria.getConnection();
+			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -147,6 +144,7 @@ public class UserDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
+			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_UPDATE);
 			//id, pw, name, birth, email, tel, address
 			pstmt.setString(1, user.getPw());

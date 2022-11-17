@@ -124,10 +124,10 @@
 			  </tbody>
 			</table>
 			<div class="buttons">
-			  <a href="${path1 }/GetTourListCtrl.do" class="button is-info">목록</a>
+			  <a href="${path1 }/GetTourListCtrl.do" class="button is-dark">목록</a>
 			  <c:if test='${sid.equals("admin") }'>
-				  <a href="${path1 }/GetTourDetailCtrl.do?no=${dto.no }" class="button is-danger">장소 보기</a>
-				  <button type="submit" class="button is-warning">장소 수정</button>
+				  <a href="${path1 }/GetTourDetailCtrl.do?no=${dto.no }" class="button is-dark">장소 보기</a>
+				  <button type="submit" class="button is-dark">장소 수정</button>
 			  </c:if>
 			</div>
 		</form>

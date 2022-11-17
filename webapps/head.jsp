@@ -10,7 +10,7 @@
 <style>
 body, html { font-family: 'Noto Sans KR', sans-serif; }
 .table { min-width:960px; }
-#logo { display:block; width:73px; height:67px; background-image:url("https://www.tongyeong.go.kr/_res/portal/img/inc/logo2022.png");
+#logo { display:block; width:195px; height:55px; background-image:url("https://tour.shinan.go.kr/images/tour/main/logo.png");
 background-size:75% auto; background-repeat:no-repeat; background-position:center center; }
 #nav-group { border-bottom:3px solid #ddd; }
 #gnb .navbar-link::after { content:""; display:none; }

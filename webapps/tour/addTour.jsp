@@ -79,10 +79,10 @@
 									
 					<div class="field is-grouped">
 					  <div class="control">
-					    <button type="submit" class="button is-link">장소 등록</button>
+					    <button type="submit" class="button is-dark">장소 등록</button>
 					  </div>
 					  <div class="control">
-					    <button type="reset" class="button is-link is-light">취소</button>
+					    <button type="reset" class="button is-dark">취소</button>
 					  </div>
 					</div>
 				</form>

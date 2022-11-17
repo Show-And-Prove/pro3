@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import kr.go.shinan.model.Maria;
 
 public class TestDAO {
-
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
@@ -19,21 +18,21 @@ public class TestDAO {
 		try {
 			con = Maria.getConnection();
 			pstmt = con.prepareStatement(Maria.TEST_SELECT_ONE);
-			pstmt.setString(1,name);
+			pstmt.setString(1, name);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				dto.setName(rs.getString("name"));
 				dto.setPoint(rs.getInt("point"));
 			}
 		} catch(Exception e){
-			System.out.println("잘못된 연산 및 요청으로 인해 목록을 불러오지 못했습니다.");
+			System.out.println("잘못된 연산");
 		} finally {
 			Maria.close(rs, pstmt, con);
 		}
 		return dto;
 	}
-	
-	public ArrayList<TestDTO> testDataAll(){
+
+	public ArrayList<TestDTO> testDataAll() {
 		ArrayList<TestDTO> list = new ArrayList<TestDTO>();
 		try {
 			con = Maria.getConnection();

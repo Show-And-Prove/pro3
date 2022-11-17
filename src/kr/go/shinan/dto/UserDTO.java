@@ -1,18 +1,17 @@
 package kr.go.shinan.dto;
 
 public class UserDTO {
-	private String id;	//ID
-	private String pw;	//PW
-	private String name;	//이름
-	private int point;	//포인트
-	private String grade;	//등급
-	private int visted;		//방문횟수
-	private String tel;		//전화번호
-	private String addr;	//주소
-	private String email;	//이메일
-	private String birth;	//생년월일
-	private String regdate;	//가입일
-	
+	private String id;
+	private String pw;
+	private String name;
+	private int point;
+	private String grade;
+	private int visted;
+	private String tel;
+	private String addr;
+	private String email;
+	private String birth;
+	private String regdate;
 	public String getId() {
 		return id;
 	}

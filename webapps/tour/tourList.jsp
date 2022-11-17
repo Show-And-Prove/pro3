@@ -48,7 +48,7 @@
 				<c:if test="${cate eq 'C' }">
 				<span>행사</span>
 				</c:if>
-				<c:if test="${grade eq 'D' }">
+				<c:if test="${cate eq 'D' }">
 				<span>축제</span>
 				</c:if>
 				<c:if test="${cate eq 'E' }">
@@ -76,9 +76,19 @@
 		    </c:if>
 		  </tbody>
 		</table>
+		<nav class="panel">
+			<div class="panel-block">
+    			<p class="control has-icons-left">
+      				<input class="input" type="text" placeholder="검색">
+      				<span class="icon is-left">
+        				<i class="fas fa-search" aria-hidden="true"></i>
+      				</span>
+    			</p>
+  			</div>
+  		</nav>
 		<c:if test='${sid.equals("admin") }'>
 		<div class="buttons">
-		  <a href="${path1 }/tour/addTour.jsp" class="button is-success">장소 등록</a>
+		  <a href="${path1 }/tour/addTour.jsp" class="button is-dark">장소 등록</a>
 		</div>
 		</c:if>
     </div>

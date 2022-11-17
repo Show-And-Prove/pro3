@@ -79,9 +79,9 @@
 			</tbody>
 		</table>
 		<div class="btn-group">
-			<input type="submit" name="submit-btn" class="button button-info" value="회원가입">
-			<input type="reset" name="reset-btn" class="button button-info" value="취소">
-			<a href="${path1 }/user/login.jsp" class="button button-danger">로그인</a>
+			<input type="submit" name="submit-btn" class="button button-dark" value="회원가입">
+			<input type="reset" name="reset-btn" class="button button-dark" value="취소">
+			<a href="<%=request.getContextPath() %>/user/login.jsp" class="button button-dark">로그인</a>
 		</div>
 	</form>	
 	<script>
@@ -158,6 +158,6 @@
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </div>
 </section>
-<jsp:include page="../footer.jsp"></jsp:include>
+<%@ include file="../footer.jsp" %>
 </body>
 </html>

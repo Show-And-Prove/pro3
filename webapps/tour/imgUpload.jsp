@@ -85,6 +85,7 @@
 				return false;
 	        }
 		}
+
 		var form = $("#upload")[0];
 		var indata = new FormData(form);
 		$.ajax({

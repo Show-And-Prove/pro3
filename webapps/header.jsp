@@ -76,7 +76,7 @@
 				    </div>
 				</div>
 				<div class="navbar-item has-dropdown is-hoverable single">
-			    	<a class="navbar-link">
+			    	<a class="navbar-link" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">
 				      	관광안내
 				    </a>
 					<div class="navbar-dropdown single">
@@ -87,7 +87,7 @@
 				</div>
 				<div class="navbar-item has-dropdown is-hoverable single">
 				    <a class="navbar-link">
-				      	통영에 대하여
+				      	신안에 대하여
 				    </a>
 				
 				    <div class="navbar-dropdown single">
@@ -112,24 +112,24 @@
 			  <div class="navbar-item">
 			  	<c:if test="${empty sid }">
 			 <div class="buttons">
-			   <a href="${path2 }/user/agree.jsp" class="button is-primary">
+			   <a href="${path2 }/user/agree.jsp" class="button is-dark">
 			     <strong>Sign up</strong>
 			   </a>
-			   <a href="${path2 }/user/login.jsp" class="button is-light">
+			   <a href="${path2 }/user/login.jsp" class="button is-dark">
 			     Log in
 			   </a>
 			 </div>
 			</c:if>
 			<c:if test="${not empty sid }">
 			 <div class="buttons">
-			   <a href="${path2 }/UserInfoCtrl.do" class="button is-primary">
-			     <strong>Member Info</strong>
+			   <a href="${path2 }/UserInfoCtrl.do" class="button is-dark">
+			     <strong>회원정보</strong>
 			   </a>
-			   <a href="${path2 }/UserLogoutCtrl.do" class="button is-light">
+			   <a href="${path2 }/UserLogoutCtrl.do" class="button is-dark">
 			     LogOut
 			   </a>
 				<c:if test='${sid.equals("admin")}'>
-				   <a href="${path2 }/AdminCtrl.do" class="button is-danger">
+				   <a href="${path2 }/AdminCtrl.do" class="button is-dark">
 				     <strong>Admin</strong>
 				   </a>
 				 </c:if>

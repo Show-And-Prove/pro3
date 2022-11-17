@@ -1,12 +1,11 @@
 package kr.go.shinan.dto;
 
 public class NoticeDTO {
-	private int no;		//글번호
-	private String title;	//제목
-	private String content;	//내용
-	private String regDate;	//작성일
-	private int visited;	//조회수
-	
+	private int no;
+	private String title;
+	private String content;
+	private String regDate;
+	private int visited;
 	public int getNo() {
 		return no;
 	}

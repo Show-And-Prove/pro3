@@ -50,13 +50,13 @@
 		<div class="btn-group">
 			<input type="submit" name="submit-btn" class="button button-info" value="로그인">
 			<input type="reset" name="reset-btn" class="button button-info" value="취소">
-			<a href="${path1 }/user/agree.jsp" class="button button-danger">회원가입</a>
+			<a href="<%=request.getContextPath() %>/user/agree.jsp" class="button button-danger">회원가입</a>
 		</div>
 	</form>	
 	<script>
 	</script>
 </div>
 </section>
-<jsp:include page="/footer.jsp" />
+<%@ include file="../footer.jsp" %>
 </body>
 </html>

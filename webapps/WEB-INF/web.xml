@@ -3,10 +3,19 @@
   <display-name>pro03</display-name>
   <servlet>
     <servlet-name>t1</servlet-name>
-    <servlet-class>kr.go.shinan.ctrl.Main</servlet-class>
+    <servlet-class>kr.go.shinan.controller.Main</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>t1</servlet-name>
     <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <url-pattern>*.gif</url-pattern>
+    <url-pattern>*.webp</url-pattern>
   </servlet-mapping>
 </web-app>

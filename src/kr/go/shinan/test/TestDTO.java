@@ -1,10 +1,7 @@
 package kr.go.shinan.test;
-
 public class TestDTO {
-	
 	private String name;
 	private int point;
-	
 	public String getName() {
 		return name;
 	}
@@ -17,5 +14,4 @@ public class TestDTO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	
 }

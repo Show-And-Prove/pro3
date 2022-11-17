@@ -19,7 +19,6 @@
   <section class="section">
     <div class="container">
       <h1 class="title">공지사항 목록</h1>
-      
 		<table class="table">
 		  <thead>
 		    <tr>
@@ -36,6 +35,7 @@
 		      <td>
 		      	<fmt:parseDate value="${dto.regDate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
 		      	<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
+		      </td>	
 		    </tr>
 		    </c:forEach>
 			<c:if test="${empty list }">
@@ -47,7 +47,7 @@
 		</table>
 		<c:if test='${sid.equals("admin") }'>
 		<div class="buttons">
-		  <a href="${path1 }/notice/addNotice.jsp" class="button is-success">글 등록</a>
+		  <a href="${path1 }/notice/addNotice.jsp" class="button is-dark">글 등록</a>
 		</div>
 		</c:if>
     </div>

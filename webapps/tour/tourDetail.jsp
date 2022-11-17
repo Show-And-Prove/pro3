@@ -133,10 +133,10 @@
 		</table>
 		<div class="buttons">
 		  <a href="${path1 }/GetTourListCtrl.do" class="button is-info">전체 목록</a>
-		  <a href="${path1 }/GetTourCateListCtrl.do?cate=${dto.cate }" class="button is-info">카테고리 목록</a>
+		  <a href="${path1 }/GetTourCateListCtrl.do?cate=${dto.cate }" class="button is-dark">카테고리 목록</a>
 		  <c:if test='${sid.equals("admin") }'>
-			  <a href="${path1 }/DelTourCtrl.do?no=${dto.no }" class="button is-danger">장소 삭제</a>
-			  <a href="${path1 }/ModifyTourCtrl.do?no=${dto.no }" class="button is-warning">장소 수정</a>
+			  <a href="${path1 }/DelTourCtrl.do?no=${dto.no }" class="button is-dark">장소 삭제</a>
+			  <a href="${path1 }/ModifyTourCtrl.do?no=${dto.no }" class="button is-dark">장소 수정</a>
 		  </c:if>
 		</div>
     </div>
