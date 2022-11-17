@@ -28,8 +28,21 @@ public class Maria {
 	final static String USER_ALL = "select * from user";
 	final static String USER_UPDATE = "update user set pw=?, name=?, birth=?, email=?, tel=?, addr=? where id=?";
 	final static String VISIT_UPDATE = "update user set visted=visted+1 where id=?";
+	
+	//test
 	public static final String TEST_SELECT_ONE = "select * from test where name=?";
 	public static final String TEST_SELECT_ALL = "select * from test";
+	
+	//tour
+	final static String LOAD_LAST_NO = "select no from tour order by no desc limit 1";
+	final static String FILE_UPLOAD = "insert into pic(tourno, picname, pos) values (?,?,?)";
+	final static String JSON_PICLIST = "select * from pic where tourno=?";
+	final static String ADD_TOUR = "insert into tour(tourno, cate, place, comment1, comment2) values (?,?,?,?,?)";
+	final static String TOUR_LIST_ALL = "select * from tour";
+	final static String TOUR_CATE_LIST = "select a.no, a.tourno, a.cate, a.place, a.comment1, a.comment2, b.picname, b.pos from tour a inner join pic b on a.tourno=b.tourno where a.cate=? and b.pos=1";
+	final static String TOUR_LIST_DETAIL = "select * from tour where no=?";
+	final static String TOUR_DEL = "delete from tour where no=?";
+	final static String MODIFY_TOUR = "update tour set tourno=?, cate=?, place=?, comment1=?, comment2=? where no=?";
 	
 	//db연결
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
