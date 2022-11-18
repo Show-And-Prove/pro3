@@ -6,34 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import kr.go.shinan.dto.ImpressDTO;
 import kr.go.shinan.dto.PicDTO;
 import kr.go.shinan.dto.TourDTO;
 
-public class TourDAO {
+public class ImpressDAO {
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 
-	public int loadLastNo(){	//중복 아이디 체크 / 회원가입시 가입전 체크
-		int no = 0;
-		try {
-			con = Maria.getConnection();
-			pstmt = con.prepareStatement(Maria.LOAD_LAST_NO);
-			rs = pstmt.executeQuery();
-			if(rs.next()){ 
-				no = rs.getInt("no") + 1;	
-			} else { 
-				no = 1;	
-			}
-		} catch(ClassNotFoundException e){
-			System.out.println("드라이버 로딩 실패");
-		} catch(Exception e){
-			System.out.println("SQL 구문이 처리되지 못했거나 연산이 잘못되었습니다.");
-		} finally {
-			Maria.close(rs, pstmt, con);
-		}
-		return no;
-	}
 	
 	public int fileUpload(PicDTO dto){
 		int cnt = 0;
@@ -79,17 +60,16 @@ public class TourDAO {
 		return picList;
 	}
 
-	public int addTour(TourDTO dto) {
+	public int addImpress(ImpressDTO dto) {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			pstmt = con.prepareStatement(Maria.ADD_TOUR);
-			pstmt.setString(1, dto.getTourno());
-			pstmt.setString(2, dto.getCate());
-			pstmt.setString(3, dto.getPlace());
-			pstmt.setString(4, dto.getComment1());
-			pstmt.setString(5, dto.getComment2());
-			pstmt.setString(6, dto.getAddr());
+			pstmt = con.prepareStatement(Maria.ADD_IMPRESS);
+			pstmt.setString(1, dto.getCate());
+			/*pstmt.setString(2, dto.getTourNo());*/
+			pstmt.setString(3, dto.getId());
+			pstmt.setString(4, dto.getContent());
+			pstmt.setDouble(5, dto.getStar());
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
@@ -126,21 +106,20 @@ public class TourDAO {
 		return tourList;
 	}
 
-	public TourDTO getTour(int no) {
-		TourDTO tour = new TourDTO();
+	public ImpressDTO getImpress(int no) {
+		ImpressDTO impress = new ImpressDTO();
 		try {
 			con = Maria.getConnection();
-			pstmt = con.prepareStatement(Maria.TOUR_LIST_DETAIL);
+			pstmt = con.prepareStatement(Maria.IMPRESS_LIST_DETAIL);
 			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
-				tour.setNo(rs.getInt("no"));
-				tour.setTourno(rs.getString("tourno"));
-				tour.setCate(rs.getString("cate"));
-				tour.setPlace(rs.getString("place"));
-				tour.setComment1(rs.getString("comment1"));
-				tour.setComment2(rs.getString("comment2"));
-				tour.setAddr(rs.getString("addr"));
+				impress.setNo(rs.getInt("no"));
+				impress.setCate(rs.getString("cate"));
+				/*impress.setTourno(rs.getString("tourno"));*/
+				impress.setId(rs.getString("id"));
+				impress.setContent(rs.getString("content"));
+				impress.setStar(rs.getDouble("star"));
 			}
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
@@ -149,7 +128,7 @@ public class TourDAO {
 		} finally {
 			Maria.close(rs, pstmt, con);
 		}
-		return tour;
+		return impress;
 	}
 
 	public int delTour(int no) {

@@ -92,17 +92,17 @@
 				
 				    <div class="navbar-dropdown single">
 				      <a class="navbar-item">
-				        About
+				        .
 				      </a>
 				      <a class="navbar-item">
-				        Jobs
+				        .
 				      </a>
 				      <a class="navbar-item">
-				        Contact
+				        .
 				      </a>
 				      <hr class="navbar-divider">
 				      <a class="navbar-item">
-				        Report an issue
+				        .
 				      </a>
 				    </div>
 			  </div>
@@ -113,10 +113,10 @@
 			  	<c:if test="${empty sid }">
 			 <div class="buttons">
 			   <a href="${path2 }/user/agree.jsp" class="button is-dark">
-			     <strong>Sign up</strong>
+			     <strong>회원가입</strong>
 			   </a>
 			   <a href="${path2 }/user/login.jsp" class="button is-dark">
-			     Log in
+			     로그인
 			   </a>
 			 </div>
 			</c:if>
@@ -126,11 +126,11 @@
 			     <strong>회원정보</strong>
 			   </a>
 			   <a href="${path2 }/UserLogoutCtrl.do" class="button is-dark">
-			     LogOut
+			     로그아웃
 			   </a>
 				<c:if test='${sid.equals("admin")}'>
 				   <a href="${path2 }/AdminCtrl.do" class="button is-dark">
-				     <strong>Admin</strong>
+				     <strong>관리자</strong>
 				   </a>
 				 </c:if>
 			 </div>

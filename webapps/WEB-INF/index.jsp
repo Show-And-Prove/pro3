@@ -12,9 +12,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>메인 페이지</title>
     <jsp:include page="/head.jsp" />
+<style>
+.slider-text {
+    position: absolute;
+    right: 0;
+    bottom: 0
+  }
+#slider .card-content{
+    max-width: 50%;
+  }
+#slider{
+    overflow: hidden;
+  } 
+@media screen and (max-width: 1200px) {
+    #slider .card-content{
+      display: none;
+    }
+  }
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.item-slide img {
+  max-width: 1200px;
+}
+.caption-container {
+  color: white;
+}
+</style>
 </head>
 <body>
   	<jsp:include page="${path1 }/header.jsp" />
+  	<section>
+        <div class=".container.is-widescreen" id="slider">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://tour.shinan.go.kr/images/tour/sub/sub_img02.jpg" alt="" />
+                    </figure>
+                </div>
+			</div>
+			<div class="card">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://tour.shinan.go.kr/images/tour/sub/sub_img03.jpg" alt="" />
+                    </figure>
+                </div>
+			</div>
+		</div>
+	</section>
+	<br><hr><br>     
 		<section class="section-padding">
 		<div class="container">
 			<div class="columns is-multiline">
@@ -105,6 +176,35 @@
 			</div>
 		</div>
 	</section>
+<script>
+bulmaCarousel.attach('#slider', {
+	slidesToScroll: 1,
+	slidesToShow: 1,
+	infinite: true,
+	autoplay: true,
+});
+var slideIndex = 1;
+showSlides(slideIndex);
+		
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+		
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+		
+function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("item-slide");
+	  var captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+		}
+}
+</script>
 	<jsp:include page="${path1 }/footer.jsp" />
 </body>
 </html>

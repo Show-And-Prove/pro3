@@ -121,6 +121,10 @@
 			      <th><label for="comment2" class="label">장소 상세 설명</label></th>
 			      <td><textarea class="textarea" name="comment2" id="comment2" cols="80" rows="8" maxlength="500" required>${dto.comment2 }</textarea></td>
 			    </tr>
+			    <tr>
+			      <th><label for="addr" class="label">주소</label></th>
+			      <td><textarea class="textarea" name="addr" id="addr" cols="30" rows="3" maxlength="200" required>${dto.addr }</textarea></td>
+			    </tr>
 			  </tbody>
 			</table>
 			<div class="buttons">

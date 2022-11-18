@@ -7,6 +7,8 @@
 <c:set var="path0" value="<%=request.getContextPath() %>" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />	<!--  -->
+<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>	<!--  -->
 <style>
 body, html { font-family: 'Noto Sans KR', sans-serif; }
 .table { min-width:960px; }

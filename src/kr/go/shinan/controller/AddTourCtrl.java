@@ -25,6 +25,7 @@ public class AddTourCtrl extends HttpServlet {
 		String place = request.getParameter("place");
 		String comment1 = request.getParameter("comment1");
 		String comment2 = request.getParameter("comment2");
+		String addr = request.getParameter("addr");
 		
 		TourDTO dto = new TourDTO();
 		dto.setCate(cate);
@@ -32,6 +33,7 @@ public class AddTourCtrl extends HttpServlet {
 		dto.setPlace(place);
 		dto.setComment1(comment1);
 		dto.setComment2(comment2);
+		dto.setAddr(addr);
 		
 		TourDAO dao = new TourDAO();
 		int cnt = dao.addTour(dto);

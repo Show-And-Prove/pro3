@@ -76,6 +76,14 @@
 						<button type="button" class="button is-link" onclick="imgUpload(1)">이미지 추가</button>
 					  </div>
 					</div>
+					
+					<div class="field">
+					  <label class="label">주소</label>
+					  <div class="control has-icons-left has-icons-right">
+					    <textarea class="textarea" name="addr" id="addr" cols="80" rows="3" maxlength="200" required></textarea>
+					  </div>
+					  <p class="help is-success">주소 입력</p>
+					</div>
 									
 					<div class="field is-grouped">
 					  <div class="control">
