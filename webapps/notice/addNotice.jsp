@@ -34,7 +34,7 @@
 			</table>
 			<div class="buttons">
 			  <button type="submit" class="button is-dark">등록</button>
-			  <button type="reset" class="button is-dark">취소</button>
+			  <button type="reset" class="button is-dark">초기화</button>
 			  <a href="${path1 }/GetNoticeListCtrl.do" class="button is-dark">목록</a>
 			</div>
 		</form>

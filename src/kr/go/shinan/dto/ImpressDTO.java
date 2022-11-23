@@ -1,24 +1,15 @@
 package kr.go.shinan.dto;
 
 public class ImpressDTO {
-	
 	private int no;
 	private String cate;
-	private String tourNo;
+	private String tourno;
 	private String id;
 	private String content;
-	private double star;
+	private Double star;
 	private String imgSrc;
 	private String regdate;
-	
-	
-
-	public String getTourNo() {
-		return tourNo;
-	}
-	public void setTourNo(String tourNo) {
-		this.tourNo = tourNo;
-	}
+	private String place;
 	public int getNo() {
 		return no;
 	}
@@ -30,6 +21,12 @@ public class ImpressDTO {
 	}
 	public void setCate(String cate) {
 		this.cate = cate;
+	}
+	public String getTourno() {
+		return tourno;
+	}
+	public void setTourno(String tourno) {
+		this.tourno = tourno;
 	}
 	public String getId() {
 		return id;
@@ -43,10 +40,10 @@ public class ImpressDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public double getStar() {
+	public Double getStar() {
 		return star;
 	}
-	public void setStar(double star) {
+	public void setStar(Double star) {
 		this.star = star;
 	}
 	public String getImgSrc() {
@@ -61,13 +58,16 @@ public class ImpressDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
+	public String getPlace() {
+		return place;
+	}
+	public void setPlace(String place) {
+		this.place = place;
+	}
 	@Override
 	public String toString() {
-		return "ImpressDTO [no=" + no + ", cate=" + cate + ", id=" + id
-				+ ", content=" + content + ", star=" + star + ", imgSrc="
-				+ imgSrc + ", regdate=" + regdate + "]";
+		return "ImpressDTO [no=" + no + ", cate=" + cate + ", tourno=" + tourno
+				+ ", id=" + id + ", conetnt=" + content + ", star=" + star
+				+ ", imgSrc=" + imgSrc + ", regdate=" + regdate + "]";
 	}
-	
-	
 }

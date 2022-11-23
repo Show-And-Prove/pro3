@@ -35,15 +35,15 @@
 				    
 				    </div>
 				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
+				<%-- <div class="navbar-item has-dropdown is-hoverable">
 			    	<a href="${path2 }/GetTourCateListCtrl.do?cate=C" class="navbar-link cate">
 				      	행사
 				    </a>
 		   		    <div class="navbar-dropdown cate" id="cate03">
 				    
 				    </div>
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
+				</div> --%>
+				<%-- <div class="navbar-item has-dropdown is-hoverable">
 			    	<a href="${path2 }/GetTourCateListCtrl.do?cate=D" class="navbar-link cate">
 				      	축제
 				    </a>
@@ -58,8 +58,8 @@
 		    		<div class="navbar-dropdown cate" id="cate05">
 				    
 				    </div>
-				</div>	
-				<div class="navbar-item has-dropdown is-hoverable">
+				</div>	 --%>
+				<div class="navbar-item has-dropdown is-hoverable" >
 			    	<a href="${path2 }/GetTourCateListCtrl.do?cate=F" class="navbar-link cate">
 				      	음식
 				    </a>
@@ -68,44 +68,33 @@
 				    </div>
 				</div>
 				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="${path2 }/GetNoticeListCtrl.do" class="navbar-link">
+				      	공지사항
+				    </a>
+				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="${path2 }/GetQnaListCtrl.do" class="navbar-link">
+				      	QnA
+				    </a>
+				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="${path2 }/GetImpressListCtrl.do" class="navbar-link">
+				      	후기
+				    </a>
+				</div>
+				<%-- <div class="navbar-item has-dropdown is-hoverable">
 			    	<a href="${path2 }/GetTourCateListCtrl.do?cate=G" class="navbar-link cate">
 				      	쇼핑
 				    </a>
 		    		<div class="navbar-dropdown cate" id="cate07">
 				    
 				    </div>
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable single">
-			    	<a class="navbar-link" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">
-				      	관광안내
-				    </a>
-					<div class="navbar-dropdown single">
-					     <a class="navbar-item" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">
-					       	공지사항
-					     </a>
-				    </div> 
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable single">
+				</div> --%>
+				<!-- <div class="navbar-item has-dropdown is-hoverable single">
 				    <a class="navbar-link">
 				      	신안에 대하여
 				    </a>
-				
-				    <div class="navbar-dropdown single">
-				      <a class="navbar-item">
-				        .
-				      </a>
-				      <a class="navbar-item">
-				        .
-				      </a>
-				      <a class="navbar-item">
-				        .
-				      </a>
-				      <hr class="navbar-divider">
-				      <a class="navbar-item">
-				        .
-				      </a>
-				    </div>
-			  </div>
+			  </div> -->
 			</div>
 			
 			<div class="navbar-end" id="tnb">
